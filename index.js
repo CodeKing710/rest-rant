@@ -1,16 +1,18 @@
+require('dotenv').config();
+
+const PORT = process.env.PORT;
 const express = require('express');
-const cfg = require('dotenv').config();
 const app = express();
 
 //INITIAL PAGE (INIT)
 app.get('/', (req,res) => {
-    process.env;
+    res.send('Hello World!');
 });
 
-//Catch all
+//Catch all 404
 app.get('*', (req,res) => {
-
+    res.status(404).send('<h1>404 Errrrrrrrrrrrrrrrrrrrrrrrrrrrrrr</h1>')
 });
 
-//Keep server open on the second best port known to man
-app.listen(422);
+//Keep server open on the best port known to man
+app.listen(PORT, () => {console.log('Running on port '+PORT+'...')});
