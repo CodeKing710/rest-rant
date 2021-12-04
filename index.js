@@ -4,6 +4,8 @@ const PORT = process.env.PORT;
 const express = require('express');
 const app = express();
 
+app.use('/places', require('./controllers/places'));
+
 //INITIAL PAGE (INIT)
 app.get('/', (req,res) => {
     res.send('Hello World!');
