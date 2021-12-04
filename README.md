@@ -1,2 +1,3 @@
-# rest-rant
- 
+# REST-rant
+
+Application for reviewing restaurants. 
