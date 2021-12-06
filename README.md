@@ -24,8 +24,8 @@ Available Routes:
 ***
 
 Places Structure:
-name<string>
-city<string>
-state<string>
-food<string>
-pic<string>
+name \<string\>
+city \<string\>
+state \<string\>
+food \<string\>
+pic \<string\>
