@@ -24,6 +24,7 @@ Available Routes:
 ***
 
 Places Structure:
+
 name \<string\>
 
 city \<string\>

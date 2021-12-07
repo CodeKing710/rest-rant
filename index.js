@@ -4,16 +4,20 @@ const PORT = process.env.PORT;
 const express = require('express');
 const app = express();
 
+app.set('view engine','jsx');
+app.engine('jsx',require('express-react-views').createEngine());
+
+//Set places route controller
 app.use('/places', require('./controllers/places'));
 
 //INITIAL PAGE (INIT)
 app.get('/', (req,res) => {
-    res.send('Hello World!');
+    res.render('home');
 });
 
 //Catch all 404
 app.get('*', (req,res) => {
-    res.status(404).send('<h1>404 Errrrrrrrrrrrrrrrrrrrrrrrrrrrrrr</h1>')
+    res.render('error404');
 });
 
 //Keep server open on the best port known to man
