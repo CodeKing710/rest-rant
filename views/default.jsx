@@ -1,4 +1,6 @@
 const React = require('react');
+const ReactScriptTag = require('react-script-tag');
+const { default: ScriptTag } = require('react-script-tag/lib/ScriptTag');
 const importScript = require('../importScript');
 
 function Def(html) {return (
@@ -6,6 +8,8 @@ function Def(html) {return (
         <head>
             <title>Title</title>
             <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+            <ScriptTag src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" />
         </head>
         <body>
             <nav>

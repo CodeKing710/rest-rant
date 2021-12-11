@@ -6,26 +6,30 @@ function edit_form(data) {
         <Def>
             <main>
                 <h1>Edit {data.place.name}</h1>
-                <form method="POST" action={`/places/${data.i}?_method=PUT`}>
-                    <div>
+                <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+                    <div className="form-group">
                         <label htmlFor="name">Place Name</label>
-                        <input id="name" name="name" value={data.place.name} required />
+                        <input className="form-control" id="name" name="name" value={data.place.name} required />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
-                        <input id="pic" name="pic" value={data.place.pic} />
+                        <input className="form-control" id="pic" name="pic" value={data.place.pic} />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="city">Place City</label>
-                        <input id="city" name="city" value={data.place.city} />
+                        <input className="form-control" id="city" name="city" value={data.place.city} />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="state">Place State</label>
-                        <input id="state" name="state" value={data.place.state} />
+                        <input className="form-control" id="state" name="state" value={data.place.state} />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="foods">Place Foods</label>
-                        <input id="foods" name="foods" value={data.place.cuisines} required />
+                        <input className="form-control" id="foods" name="foods" value={data.place.cuisines} required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="founded">Founded Year</label>
+                        <input className="form-control" id="founded" name="founded" value={data.place.founded} required />
                     </div>
                     <input type="submit" value="Submit Changes" />
                 </form>

@@ -7,25 +7,29 @@ function new_form() {
             <main>
                 <h1>Add a new place</h1>
                 <form method="POST" action="/places">
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="name">Place Name</label>
-                        <input id="name" name="name" required />
+                        <input className="form-control" id="name" name="name" required />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
-                        <input id="pic" name="pic" />
+                        <input className="form-control" id="pic" name="pic" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="city">Place City</label>
-                        <input id="city" name="city" />
+                        <input className="form-control" id="city" name="city" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="state">Place State</label>
-                        <input id="state" name="state" />
+                        <input className="form-control" id="state" name="state" />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="foods">Place Foods</label>
-                        <input id="foods" name="foods" required />
+                        <input className="form-control" id="foods" name="foods" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="founded">Founded Year</label>
+                        <input className="form-control" id="founded" name="founded" />
                     </div>
                     <input type="submit" value="Add Place" />
                 </form>

@@ -1,9 +1,11 @@
 require('dotenv').config();
 
-//App init and Globals
+//Globals
 const PORT = process.env.PORT;
 const express = require('express');
 const methodOverride = require('method-override');
+
+//App init
 const app = express();
 
 //App settings
