@@ -13,6 +13,7 @@ let places = [{
     pic: 'http://placekitten.com/250/250'
 }]
 
+//INDEX PAGE ROUTES
 router.get('/', (req,res) => {
     res.render('places/index', {places});
 });
@@ -30,6 +31,18 @@ router.post('/', (req, res) => {
     places.push(req.body);
     res.redirect('/places');
 });
+
+//SHOW PLACE ROUTES
+router.get('/:id', (req,res) => {
+    let id = Number(req.params.id);
+    if(isNaN(id) || !places[id]) {
+        res.render('error404');
+    } else {
+        res.render('places/show', {place:places[id]});
+    }
+});
+
+//NEW PLACE FORM ROUTE
 router.get('/new', (req,res) => {
     res.render('places/new');
 });

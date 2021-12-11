@@ -8,7 +8,9 @@ function index(data) {
             <h1>Places</h1>
             {data.places.map((place,index) => {return(
                 <div key={index}>
-                    <h2>{place.name}</h2>
+                    <h2>
+                        <a href={`/places/${index}`}>{place.name}</a>
+                    </h2>
                     <img src={place.pic} alt={place.name} />
                 </div>
             )})}
