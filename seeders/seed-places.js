@@ -6,14 +6,16 @@ db.Place.create([{
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
     pic: 'http://placekitten.com/400/400',
-    founded: 1989
+    founded: 1989,
+    comments: []
 },{
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
     pic: 'http://placekitten.com/400/400',
-    founded: 2020
+    founded: 2020,
+    comments: []
 }]).then(() => {
     console.log('Success!');
     process.exit();
