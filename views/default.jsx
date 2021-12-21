@@ -1,7 +1,5 @@
 const React = require('react');
-const ReactScriptTag = require('react-script-tag');
 const { default: ScriptTag } = require('react-script-tag/lib/ScriptTag');
-const importScript = require('../importScript');
 
 function Def(html) {return (
     <html>
