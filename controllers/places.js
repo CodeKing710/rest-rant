@@ -33,16 +33,34 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
-    res.send('PUT /places/:id stub')
+router.put('/:id', async (req, res) => {
+    try {
+        await db.Place.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/places/${req.params.id}`);
+    } catch(e) {
+        console.log(e);
+        res.render('error404');
+    }
 });
 
-router.delete('/:id', (req, res) => {
-    res.send('DELETE /places/:id stub')
+router.delete('/:id', async (req, res) => {
+    try {
+        let place = await db.Place.findByIdAndDelete(req.params.id);
+        res.redirect('/places');
+    } catch (e) {
+        console.log(e);
+        res.render('error404');
+    }
 });
 
-router.get('/:id/edit', (req, res) => {
-    res.send('GET edit form stub')
+router.get('/:id/edit', async (req, res) => {
+    try {
+        let place = await db.Place.findById(req.params.id);
+        res.render('places/edit', {place});
+    } catch(e) {
+        console.log(e);
+        res.render('error404');
+    }
 });
 
 router.post('/:id/rant', async (req, res) => {

@@ -3,7 +3,21 @@ const Def = require('../default');
 
 function show (data) {
   let comments = (<h3 className="inactive">No Comments Yet!</h3>);
+  let rating = (<h3 className="inactive">Not Rated Yet!</h3>);
+
   if(data.place.comments.length) {
+    //Adjust ratings
+    let sumRatings = data.place.comments.reduce((tot,c) => {
+      return tot + c.stars;
+    }, 0);
+    let avgRating = Math.round(sumRatings/data.place.comments.length);
+    let stars = '';
+
+    for(let i = 0; i < avgRating; i++)
+      stars += '⭐️'
+
+    rating = (<h3>{stars} stars</h3>)
+    //Adjust comments
     comments = data.place.comments.map(comment => {
       return (<div className="border" key={data.place.comments.id}>
         <h2 className="rant">{comment.rant ? 'Rant!':'Rave!'}</h2>
@@ -13,6 +27,8 @@ function show (data) {
       </div>)
     })
   }
+
+  //Output
   return (
     <Def>
       <main>
@@ -25,7 +41,7 @@ function show (data) {
             </h3>
           </div>
           <h2>Rating</h2>
-          <p>Unrated</p>
+          {rating}
           <div className='col-sm-6'>
             <h2>
               Description
